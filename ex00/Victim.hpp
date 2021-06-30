@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 09:50:41 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/28 23:17:33 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/30 10:22:55 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Victim
 		~Victim();
 		std::string _Name;
 		Victim &operator=(const Victim &rhs);
-		void getPolymorphed() const;
+		virtual void getPolymorphed() const;
 };
 
 std::ostream &operator<<(std::ostream &out, Victim const &victim);
