@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 19:17:43 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/30 20:53:31 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/07/07 14:42:14 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,11 @@ AWeapon &AWeapon::operator=(const AWeapon &weapon)
     _Dmg = weapon._Dmg;
     
     return (*this);
+}
+
+AWeapon::AWeapon(const AWeapon &weapon)
+{
+    _Name = weapon._Name;
+    _AP = weapon._AP;
+    _Dmg = weapon._Dmg;
 }

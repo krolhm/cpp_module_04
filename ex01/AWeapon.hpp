@@ -6,9 +6,12 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 19:17:33 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/30 21:10:17 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/07/07 14:45:21 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef AWEAPON_HPP
+# define AWEAPON_HPP
 
 #include <iostream>
 #include <cstring>
@@ -30,6 +33,8 @@ class AWeapon
 
 		virtual void attack() const = 0;
 
-		// AWeapon(const AWeapon &weapon);
+		AWeapon(const AWeapon &weapon);
 		AWeapon &operator=(const AWeapon &weapon);
 };
+
+#endif
