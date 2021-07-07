@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 20:22:10 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/07/07 15:02:19 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/07/07 15:18:32 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Character::recoverAP()
 
 void Character::attack(Enemy *enemy)
 {
-	if (_Weapon == nullptr && _AP < _Weapon->getAP())
+	if (_Weapon == nullptr || _AP < _Weapon->getAP())
 		return;
 	std::cout << PINK BOLD << _Name << " attacks " << enemy->getType() << " with a " 
 	<< _Weapon->getName() << RESET << std::endl;
