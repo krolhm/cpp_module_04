@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 15:21:12 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/07/09 19:36:35 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/07/12 10:49:21 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/07/12 10:59:59 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include "ISquad.hpp"
-# include "ISpaceMarine.hpp"
+# include "AMateria.hpp"
+# include <iostream>
 
-class Squad : public ISquad
+class Cure: public AMateria
 {
-	private:
-		int _Count;
-		ISpaceMarine **_Array;
-
 	public:
-		Squad();
-		~Squad();
-		Squad(const Squad &squad);
-		Squad &operator=(Squad const &squad);
-
-		int getCount() const;
-		ISpaceMarine* getUnit(int index) const;
-
-		int push(ISpaceMarine *unit);
+		Cure();
+		virtual ~Cure();
+		Cure(Cure const &cure);
+		
+		Cure &operator=(Cure const &cure);
+		
+		virtual AMateria* clone() const;
+		virtual void use(ICharacter& target);
 };
+
+#define RESET "\033[0m"
+#define BOLD "\033[1m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define BLUE "\033[34m"
+#define PINK "\033[35m"
 
 #endif

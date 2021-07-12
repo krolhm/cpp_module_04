@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   Amateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 15:21:12 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/07/09 19:36:35 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/07/12 10:55:10 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/07/12 10:56:05 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#include "AMateria.hpp"
 
-# include "ISquad.hpp"
-# include "ISpaceMarine.hpp"
-
-class Squad : public ISquad
+AMateria::AMateria(std::string const & type): _Type(type), xp_(0)
 {
-	private:
-		int _Count;
-		ISpaceMarine **_Array;
+	
+}
 
-	public:
-		Squad();
-		~Squad();
-		Squad(const Squad &squad);
-		Squad &operator=(Squad const &squad);
+AMateria::~AMateria()
+{
+	
+}
 
-		int getCount() const;
-		ISpaceMarine* getUnit(int index) const;
+std::string const &AMateria::getType() const
+{
+	return _Type;
+}
 
-		int push(ISpaceMarine *unit);
-};
+unsigned int AMateria::getXP() const
+{
+	return xp_;
+}
 
-#endif
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
+	xp_ += 10;
+}

@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 15:21:12 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/07/09 19:36:35 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/07/11 09:59:29 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/07/11 10:00:04 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-# include "ISquad.hpp"
-# include "ISpaceMarine.hpp"
+# include <iostream>
+# include "AMateria.hpp"
 
-class Squad : public ISquad
+class IMateriaSource
 {
-	private:
-		int _Count;
-		ISpaceMarine **_Array;
-
 	public:
-		Squad();
-		~Squad();
-		Squad(const Squad &squad);
-		Squad &operator=(Squad const &squad);
-
-		int getCount() const;
-		ISpaceMarine* getUnit(int index) const;
-
-		int push(ISpaceMarine *unit);
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria *) = 0;
+		virtual AMateria *createMateria(std::string const &type) = 0;
 };
 
 #endif

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
+/*   AssaultTerminator.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 15:25:20 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/07/10 18:34:59 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/07/10 18:28:29 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/07/10 18:31:46 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TACTICALMARINE_HPP
-# define TACTICALMARINE_HPP
+#ifndef ASSAULTTERMINATOR_HPP
+#define ASSAULTTERMINATOR_HPP
 
 #include "ISpaceMarine.hpp"
 
-class TacticalMarine : public ISpaceMarine
+class AssaultTerminator : public ISpaceMarine
 {
 	public:
-		TacticalMarine();
-		~TacticalMarine();
-		TacticalMarine(const TacticalMarine &tactical);
-		virtual ISpaceMarine* clone() const;
-		TacticalMarine &operator=(TacticalMarine const &tactical);
+		AssaultTerminator();
+		~AssaultTerminator();
+		AssaultTerminator(const AssaultTerminator &assault);
+		virtual ISpaceMarine *clone() const;
+		AssaultTerminator &operator=(AssaultTerminator const &assault);
 		virtual void battleCry() const;
 		virtual void rangedAttack() const;
 		virtual void meleeAttack() const;

@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 15:21:12 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/07/09 19:36:35 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/07/11 09:55:28 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/07/11 09:55:29 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_HPP
-# define SQUAD_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-# include "ISquad.hpp"
-# include "ISpaceMarine.hpp"
+# include <iostream>
+class ICharacter;
+# include "AMateria.hpp"
 
-class Squad : public ISquad
+class ICharacter
 {
-	private:
-		int _Count;
-		ISpaceMarine **_Array;
-
 	public:
-		Squad();
-		~Squad();
-		Squad(const Squad &squad);
-		Squad &operator=(Squad const &squad);
-
-		int getCount() const;
-		ISpaceMarine* getUnit(int index) const;
-
-		int push(ISpaceMarine *unit);
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif
